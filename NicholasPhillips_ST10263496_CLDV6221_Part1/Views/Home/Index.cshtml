@@ -1,0 +1,135 @@
+﻿@model NicholasPhillips_ST10263496_CLDV6221_Part1.Models.CustomerProfile
+
+<style>
+    .container {
+        max-width: 1200px;
+        padding: 20px;
+    }
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+    .card h4 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group input[type="file"] {
+        padding: 3px;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .btn:hover {
+        background-color: #218838;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .col {
+        flex: 1;
+        min-width: 250px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <!------------------------------------------------------------ Upload Image Form -->
+        <div class="col">
+            <div class="card">
+                <h4>Upload Image</h4>
+                <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Select Image</label>
+                        <input type="file" name="file" id="file" />
+                    </div>
+                    <button type="submit" class="btn">Upload Image</button>
+                </form>
+            </div>
+        </div>
+
+        <!---------------------------------------------------- Add Customer Profile Form -->
+        <div class="col">
+            <div class="card">
+                <h4>Add Customer Profile</h4>
+                <form asp-action="AddCustomerProfile" method="post">
+                    <div class="form-group">
+                        <label for="FirstName">First Name</label>
+                        <input type="text" name="FirstName" placeholder="First Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" name="LastName" placeholder="Last Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="text" name="PhoneNumber" placeholder="Phone Number" />
+                    </div>
+                    <button type="submit" class="btn">Add Profile</button>
+                </form>
+            </div>
+        </div>
+
+        <!--------------------------------------------------------------------------- Process Order Form -->
+        <div class="col">
+            <div class="card">
+                <h4>Process Order</h4>
+                <form asp-action="ProcessOrder" method="post">
+                    <div class="form-group">
+                        <label for="orderId">Order ID</label>
+                        <input type="text" name="orderId" placeholder="Order ID" />
+                    </div>
+                    <button type="submit" class="btn">Process Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-------------------------------------------------------------------------------- Upload Contract Form -->
+        <div class="col">
+            <div class="card">
+                <h4>Upload Contract</h4>
+                <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Select Contract</label>
+                        <input type="file" name="file" id="file" />
+                    </div>
+                    <button type="submit" class="btn">Upload Contract</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
